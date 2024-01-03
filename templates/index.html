@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Predictor</title>
+    <style>
+        /* Add custom CSS styling as needed */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+        
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        
+        form p {
+            margin-top: 10px;
+        }
+        
+        input, label {
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        
+        label {
+            font-weight: normal;
+        }
+        
+        button {
+            background-color: #2db5b2;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #9b7740;
+        }
+        
+        #prediction-result {
+            margin-top: 0px;
+            font-weight: bold;
+            font-size: 20px;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .positive {
+            color: #4caf50;
+        }
+        
+        .negative {
+            color: #f44336;
+        }
+        
+        .unknown {
+            color: #757575;
+        }
+        h2{
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h2>Diabetes Predictor</h2>
+
+    <form action="{{ url_for('predict')}}" method="POST">
+        <p>What is your age?</p>
+        <input type="number" name="Age" placeholder="Enter your age" required="required" /><br>
+        <p>What is your gender?</p>
+        <label><input type="radio" name="Sex" value="1" required="required" />Male</label>
+        <label><input type="radio" name="Sex" value="0" required="required" />Female</label><br>
+        <p>Do you have weakness?</p>
+        <label><input type="radio" name="weakness" value="1" required="required" />Yes</label>
+        <label><input type="radio" name="weakness" value="0" required="required" />No</label><br>
+        <p>Do you have itching?</p>
+        <label><input type="radio" name="itching" value="1" required="required" />Yes</label>
+        <label><input type="radio" name="itching" value="0" required="required" />No</label><br>
+        <p>Are you obese?</p>
+        <label><input type="radio" name="Obese" value="1" required="required" />Yes</label>
+        <label><input type="radio" name="Obese" value="0" required="required" />No</label><br>
+        <p>Are you suffering from polyuria?</p>
+        <label><input type="radio" name="polyuria" value="1" required="required" />Yes</label>
+        <label><input type="radio" name="polyuria" value="0" required="required" />No</label><br>
+        
+        <button type="submit">Predict</button>
+
+    </form>
+
+</body>
+
+</html>

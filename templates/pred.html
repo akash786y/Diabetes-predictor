@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px; /* Added padding for better spacing */
+        }
+        
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        #prediction-result {
+            margin-top: 20px; /* Increased margin for better separation */
+            font-weight: bold;
+            font-size: 24px; /* Slightly increased font size */
+            padding: 15px;
+            text-align: center;
+            border: 2px solid #ddd; /* Added border for a cleaner look */
+            border-radius: 10px; /* Rounded corners for the result box */
+            background-color: #fff; /* White background for contrast */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Added a subtle box shadow */
+        }
+        
+        .positive {
+            color: #4caf50;
+        }
+        
+        .negative {
+            color: #f44336;
+        }
+        
+        .unknown {
+            color: #757575;
+        }
+    </style>
+</head>
+<body>
+    
+    <h2>Prediction Result</h2>
+
+    <div id="prediction-result">
+        {% if prediction == "Negative" %}
+            <p class="negative">Negative</p>
+        {% elif prediction == "Positive" %}
+            <p class="positive">Positive</p>
+        {% else %}
+            <p class="unknown">Unknown</p>
+        {% endif %}
+    </div>
+
+</body>
+</html>
